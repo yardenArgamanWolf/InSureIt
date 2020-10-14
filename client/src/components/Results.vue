@@ -62,9 +62,9 @@ export default {
       const priceA = Number(A);
       const priceB = Number(B);
       let comparison = 0;
-      if (+priceA < +priceB) {
+      if (+priceA > +priceB) {
         comparison = 1;
-      } else if (+priceA > +priceB) {
+      } else if (+priceA < +priceB) {
         comparison = -1;
       }
       return comparison;
