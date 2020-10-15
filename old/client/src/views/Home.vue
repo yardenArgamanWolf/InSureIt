@@ -26,7 +26,6 @@ import UnderHeader from "@/components/UnderHeader";
 import About from "@/components/About.vue";
 import ChoosePolicy from "@/components/ChoosePolicy";
 import HowItWork from "@/components/HowItWork";
-import Cancel from "@/components/Cancel";
 import Contact from "@/components/Contact";
 import {
     SlideYDownTransition
