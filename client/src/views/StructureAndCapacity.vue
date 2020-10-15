@@ -438,13 +438,15 @@ export default {
 
 <style lang="scss">
 .h2-tag-contact {
-  font-size: 50px;
-  word-spacing: 2px;
-  text-align: center;
-  margin-bottom: 30px;
-  letter-spacing: 1px;
-  font-weight: 300;
-  text-transform: uppercase;
+  h2 {
+    font-size: 50px;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
 }
 
 .h2-tag-contact:after {
@@ -467,18 +469,22 @@ textarea {
   cursor: pointer;
 }
 @media (max-width: 768px) {
-  .container{
-    h2{
-      margin-top: 100px;
-      font-size: 50px;
+  .container {
+    .h2-tag-contact {
+      h2 {
+        margin-top: 100px;
+        font-size: 50px;
+      }
     }
   }
 }
 @media (max-width: 540px) {
-  .container{
-    h2{
-      margin-top: 100px;
-      font-size: 30px;
+  .container {
+    .h2-tag-contact {
+      h2 {
+        margin-top: 100px;
+        font-size: 30px;
+      }
     }
   }
 }

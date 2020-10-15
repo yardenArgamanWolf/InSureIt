@@ -27,7 +27,8 @@
             type="text"
             class="form-control"
             id="exampleInputPassword1"
-            v-model="id"
+            v-model.number="id"
+            maxlength="9"
           />
         </div>
         <div class="form-group">
@@ -54,6 +55,7 @@
             class="form-control"
             id="exampleInputPassword1"
             v-model="PhoneNum"
+            maxlength="10"
           />
         </div>
 
@@ -234,10 +236,9 @@ export default {
   },
   methods: {
     to_pay() {
-      this.fullName && this.id && this.email
-        ?  this.$router.push(`/pay/${this.$route.params.id}`)
+      this.fullName && this.id && this.email && this.PhoneNum && this.street
+        ? this.$router.push(`/pay/${this.$route.params.id}`)
         : this.$swal("נא וודא כי כל הפרטים מלאים", ` `, "error");
-     
     },
   },
 };

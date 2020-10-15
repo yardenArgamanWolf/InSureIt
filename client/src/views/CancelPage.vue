@@ -29,7 +29,9 @@
             type="text"
             class="form-control"
             id="exampleInputPassword1"
-            v-model="id"
+            maxlength="9"
+            v-model.number="id"
+            @input="checkLength"
           />
         </div>
         <div class="form-group">
@@ -52,6 +54,7 @@
             >מספר טלפון
           </label>
           <input
+            maxlength="10"
             type="text"
             class="form-control"
             id="exampleInputPassword1"
@@ -230,9 +233,19 @@ export default {
       attache: "",
       cancelDate: "",
       insuranceCompany: "",
+      limitNum: 9,
+      alert: false,
     };
   },
   methods: {
+    checkLength({ target }) {
+      const length = target.value.length;
+      if (length >= 9) return;
+
+      this.id = target.value;
+
+      console.log(length);
+    },
     setInsuranceCompany(chosenCompany) {
       this.insuranceCompany = chosenCompany;
     },
@@ -245,7 +258,7 @@ export default {
         email: this.email,
         city: this.city,
         street: this.street,
-        hoseNum: this.houseNum,
+        houseNum: this.houseNum,
         mailBox: this.Mailbox,
         postalCode: this.PostalCode,
         cancelId: this.cancelId,
@@ -254,8 +267,19 @@ export default {
         company: this.insuranceCompany,
       };
 
+      // houseNum attache postalCode  mailBox
+
       // this.selectCurrEmail(details);
-      details.email && details.name && details.phone
+      details.company &&
+      details.cancelDate &&
+      details.cancelId &&
+      details.street &&
+      details.city &&
+      details.email &&
+      details.phone &&
+      details.date &&
+      details.id &&
+      details.name
         ? this.$swal(
             "פנייתך הועברה לחברת הביטוח",
             `${this.email} מייל עם תשובה יישלח ל `,

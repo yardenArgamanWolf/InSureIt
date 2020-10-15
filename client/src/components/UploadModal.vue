@@ -23,8 +23,6 @@
 </template>
 
 <script>
-import UploadField from "./UploadField";
-import UploadContent from "./UploadContent";
 import CompaniesList from "./CompaniesList";
 export default {
   name: "uploadmodal",

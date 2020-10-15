@@ -2,9 +2,11 @@
   <div style="margin-bottom: 100px">
     <div
       v-if="_table.length == 0"
-      class="d-flex flex-column align-items-center"
+      class="container margin-center d-flex flex-column align-items-center"
     >
-      <div class="h2-tag-contact">ביטוח מבנה</div>
+      <div class="h2-tag-contact">
+        <h2>ביטוח מבנה</h2>
+      </div>
       <form>
         <div class="form-group a">
           <label style="float: right; font-size: 20px"
@@ -195,7 +197,6 @@
     </div>
     <div class="container" v-else>
       <Results :table="_table"></Results>
-
     </div>
   </div>
 </template>
@@ -205,11 +206,9 @@ import Success from "@/assets/svg/Success";
 import Results from "../components/Results";
 
 export default {
- 
   components: {
     Success,
     Results,
-
   },
   data() {
     return {
@@ -289,7 +288,7 @@ export default {
       this.currentlyPaying = 0;
     },
     checkPrices() {
-       if (!this.isLogged) {
+      if (!this.isLogged) {
         this.$swal("נא התחבר על מנת לקבל פרטים מלאים", ` `, "error");
         setTimeout(() => {
           this.$router.push("/login");
@@ -357,7 +356,7 @@ export default {
       return this.table;
     },
     _structureData() {
-      console.log('in stuctureDAta')
+      console.log("in stuctureDAta");
       return this.$store.getters.get_structure;
     },
     _errorMessage() {
@@ -370,15 +369,17 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 .h2-tag-contact {
-  font-size: 50px;
-  word-spacing: 2px;
-  text-align: center;
-  margin-bottom: 30px;
-  letter-spacing: 1px;
-  font-weight: 300;
-  text-transform: uppercase;
+  h2 {
+    font-size: 50px;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
 }
 
 .h2-tag-contact:after {
@@ -399,5 +400,25 @@ textarea {
   background-color: #1569ac;
   color: white;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .container {
+    .h2-tag-contact {
+      h2 {
+        margin-top: 100px;
+        font-size: 50px;
+      }
+    }
+  }
+}
+@media (max-width: 540px) {
+  .container {
+    .h2-tag-contact {
+      h2 {
+        margin-top: 100px;
+        font-size: 30px;
+      }
+    }
+  }
 }
 </style>

@@ -27,6 +27,7 @@
             class="form-control"
             id="exampleInputPassword1"
             v-model="id"
+            maxlength="9"
           />
         </div>
 
@@ -69,6 +70,7 @@
             class="form-control"
             id="exampleInputPassword1"
             v-model="ex"
+            maxlength="5"
           />
         </div>
         <div class="form-group">
@@ -157,7 +159,7 @@ export default {
   },
   methods:{
     pay(){
-        this.id && this.name && this.cardNumber
+        this.id && this.name && this.cardNumber && this.price && this.cvc &&this.ex&&this.TypeOption
         ? this.$swal(
             "התשלום הושלם",
             ``,

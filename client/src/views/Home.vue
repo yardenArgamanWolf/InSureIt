@@ -30,9 +30,7 @@ import UnderHeader from "@/components/UnderHeader";
 import About from "@/components/About.vue";
 import ChoosePolicy from "@/components/ChoosePolicy";
 import HowItWork from "@/components/HowItWork";
-import Cancel from "@/components/Cancel";
 import Contact from "@/components/Contact";
-import UploadModal from "@/components/UploadModal";
 import NewNav from "@/components/NewNav";
 import { SlideYDownTransition } from "vue2-transitions";
 import { ZoomCenterTransition } from "vue2-transitions";
@@ -49,11 +47,9 @@ export default {
     UnderHeader,
     ChoosePolicy,
     HowItWork,
-    Cancel,
     Contact,
     SlideYDownTransition,
     ZoomCenterTransition,
-    UploadModal,
     NewNav
   },
 
